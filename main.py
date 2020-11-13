@@ -1,16 +1,16 @@
-# This is a sample Python script.
+from core.binance import Binance
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import configparser
 
+config = configparser.ConfigParser()
+config.read("settings.ini")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+8 to toggle the breakpoint.
+api_key = config["Binance"]["api_key"]
+secret = config["Binance"]["secret"]
 
+binance = Binance(api_key, secret)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+tick = binance.get_tick("ETHBUSD")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(tick)
+
