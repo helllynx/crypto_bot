@@ -7,6 +7,10 @@ authors = ["Yanis"]
 [tool.poetry.dependencies]
 python = "^3.8"
 python-binance = "^0.7.5"
+jupyter = "^1.0.0"
+pandas = "^1.1.4"
+jupyter-tabnine = "^1.1.0"
+seaborn = "^0.11.0"
 
 [tool.poetry.dev-dependencies]
 

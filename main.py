@@ -13,3 +13,5 @@ binance = Binance(api_key, secret)
 tick = binance.get_tick("ETHBUSD")
 
 print(tick)
+
+binance.get_all_tickers()

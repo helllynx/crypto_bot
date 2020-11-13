@@ -35,3 +35,9 @@ class Binance:
 
     def get_tick(self, symbol: str) -> Tick:
         return Tick(**self.client.get_ticker(symbol=symbol))
+
+    def get_all_tickers(self):
+        tickers = []
+        for tick in self.client.get_all_tickers():
+            tickers.append(self.get_tick(tick['symbol']))
+        return tickers
