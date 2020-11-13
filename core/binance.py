@@ -1,15 +1,6 @@
-import dataclasses
-import json
 from dataclasses import dataclass
 
 from binance.client import Client
-
-
-class EnhancedJSONEncoder(json.JSONEncoder):
-    def default(self, o):
-        if dataclasses.is_dataclass(o):
-            return dataclasses.asdict(o)
-        return super().default(o)
 
 
 @dataclass

@@ -1,6 +1,6 @@
-from core.binance import Binance
-
 import configparser
+
+from core.binance import Binance
 
 config = configparser.ConfigParser()
 config.read("settings.ini")
@@ -13,4 +13,3 @@ binance = Binance(api_key, secret)
 tick = binance.get_tick("ETHBUSD")
 
 print(tick)
-
